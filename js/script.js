@@ -44,6 +44,7 @@ function startGame() {
       card.textContent = "";
       card.classList.remove("flipped");
       card.addEventListener("click", flipCard);
+      card.addEventListener("touchstart", flipCard);
     });
   }, 5000);
 }

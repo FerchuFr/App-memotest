@@ -4,20 +4,27 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   h1 {
     color: #6a5acd;
-    margin-top: 20px;
+    margin: 10px 0;
+    font-size: 2rem;
   }
   
   #gameBoard {
     display: none;
     margin: 20px auto;
     max-width: 400px;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    padding: 0 10px;
   }
   
   .card {
@@ -27,10 +34,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 38px;
+    font-size: 2.5rem;
     cursor: pointer;
     transition: transform 0.3s, background 0.3s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    aspect-ratio: 1;
   }
   
   .card:hover {
@@ -45,7 +53,7 @@ body {
   button {
     margin: 20px;
     padding: 12px 25px;
-    font-size: 16px;
+    font-size: 1rem;
     border: none;
     border-radius: 12px;
     background-color: #a7c7e7;
@@ -53,6 +61,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+    min-width: 120px;
   }
   
   button:hover {
@@ -60,8 +69,124 @@ body {
   }
   
   #intentos {
-    font-size: 18px;
+    font-size: 1.1rem;
     margin: 10px;
     color: #333;
+    padding: 0 20px;
+  }
+
+  /* Media Queries para Responsive Design */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+      margin: 5px 0;
+    }
+    
+    #gameBoard {
+      max-width: 350px;
+      gap: 8px;
+    }
+    
+    .card {
+      height: 70px;
+      font-size: 2.2rem;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    
+    #intentos {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Móviles */
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      margin: 5px 0;
+    }
+    
+    #gameBoard {
+      max-width: 300px;
+      gap: 6px;
+      padding: 0 5px;
+    }
+    
+    .card {
+      height: 60px;
+      font-size: 1.8rem;
+      border-radius: 10px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      margin: 15px;
+    }
+    
+    #intentos {
+      font-size: 0.9rem;
+      margin: 5px;
+    }
+  }
+  
+  /* Móviles muy pequeños */
+  @media (max-width: 360px) {
+    #gameBoard {
+      max-width: 280px;
+      gap: 4px;
+    }
+    
+    .card {
+      height: 55px;
+      font-size: 1.6rem;
+    }
+    
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* Orientación landscape en móviles */
+  @media (max-height: 500px) and (orientation: landscape) {
+    body {
+      justify-content: flex-start;
+      padding: 5px;
+    }
+    
+    h1 {
+      font-size: 1.2rem;
+      margin: 2px 0;
+    }
+    
+    #gameBoard {
+      max-width: 250px;
+      margin: 5px auto;
+    }
+    
+    .card {
+      height: 45px;
+      font-size: 1.4rem;
+    }
+    
+    button {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      margin: 5px;
+    }
+    
+    #intentos {
+      font-size: 0.8rem;
+      margin: 2px;
+    }
   }
   
